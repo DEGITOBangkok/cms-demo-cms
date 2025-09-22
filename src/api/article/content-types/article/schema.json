@@ -74,6 +74,7 @@
       "target": "api::category.category",
       "inversedBy": "articles"
     },
+<<<<<<< Updated upstream
     "blocks": {
       "type": "dynamiczone",
       "pluginOptions": {
@@ -95,6 +96,8 @@
         }
       }
     },
+=======
+>>>>>>> Stashed changes
     "gallery": {
       "type": "media",
       "pluginOptions": {
