@@ -1,9 +1,5 @@
 export default () => ({
-    // seo: {
-    //     enabled: true,
-    // },
-    // ckeditor: {
-    //     enabled: true,
-    // },
+    seo: {
+        enabled: true,
+    },
 });
-

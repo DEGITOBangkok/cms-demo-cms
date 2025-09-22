@@ -74,30 +74,6 @@
       "target": "api::category.category",
       "inversedBy": "articles"
     },
-<<<<<<< Updated upstream
-    "blocks": {
-      "type": "dynamiczone",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "components": [
-        "shared.media",
-        "shared.quote",
-        "shared.rich-text"
-      ]
-    },
-    "tags": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-=======
->>>>>>> Stashed changes
     "gallery": {
       "type": "media",
       "pluginOptions": {
@@ -113,12 +89,16 @@
         "audios"
       ]
     },
-    "details": {
-      "type": "richtext",
+    "content": {
+      "type": "customField",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
+      },
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
       }
     }
   }

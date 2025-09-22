@@ -1,0 +1,13 @@
+{
+    "collectionName": "components_shared_link_outs",
+    "info": {
+        "displayName": "linkOut"
+    },
+    "options": {},
+    "attributes": {
+        "label": {
+            "type": "string"
+        }
+    },
+    "config": {}
+}
