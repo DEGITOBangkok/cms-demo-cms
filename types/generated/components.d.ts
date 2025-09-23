@@ -42,6 +42,18 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedPageElements extends Struct.ComponentSchema {
+  collectionName: 'components_shared_page_elements';
+  info: {
+    displayName: 'PageElements';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedQuote extends Struct.ComponentSchema {
   collectionName: 'components_shared_quotes';
   info: {
@@ -61,9 +73,7 @@ export interface SharedRichText extends Struct.ComponentSchema {
     displayName: 'Rich text';
     icon: 'align-justify';
   };
-  attributes: {
-    body: Schema.Attribute.RichText;
-  };
+  attributes: {};
 }
 
 export interface SharedSeo extends Struct.ComponentSchema {
@@ -99,6 +109,7 @@ declare module '@strapi/strapi' {
       'shared.banner-slide': SharedBannerSlide;
       'shared.link-out': SharedLinkOut;
       'shared.media': SharedMedia;
+      'shared.page-elements': SharedPageElements;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
