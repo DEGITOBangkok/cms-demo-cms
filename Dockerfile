@@ -32,6 +32,5 @@ USER node
 
 # Create volume for persistent data
 VOLUME ["/opt/app/data", "/opt/app/public/uploads"]
-
 EXPOSE 1337
 CMD ["npm", "run", "start"]

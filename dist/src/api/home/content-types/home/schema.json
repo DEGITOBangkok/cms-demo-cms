@@ -59,16 +59,6 @@
             "component": "shared.seo",
             "repeatable": true
         },
-        "homeDetails": {
-            "type": "component",
-            "pluginOptions": {
-                "i18n": {
-                    "localized": true
-                }
-            },
-            "component": "shared.page-elements",
-            "repeatable": true
-        },
         "homeImg": {
             "type": "media",
             "pluginOptions": {
@@ -99,6 +89,16 @@
                     "localized": true
                 }
             }
+        },
+        "homeDetails": {
+            "type": "component",
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            },
+            "component": "shared.page-elements",
+            "repeatable": true
         }
     }
 }

@@ -59,16 +59,6 @@
       "component": "shared.seo",
       "repeatable": true
     },
-    "homeDetails": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.page-elements",
-      "repeatable": true
-    },
     "homeImg": {
       "type": "media",
       "pluginOptions": {
@@ -83,6 +73,32 @@
         "videos",
         "audios"
       ]
+    },
+    "homeNewsTitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "homeNewsDesc": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "homeDetails": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.page-elements",
+      "repeatable": true
     }
   }
 }
