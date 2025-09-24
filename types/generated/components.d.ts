@@ -49,7 +49,7 @@ export interface SharedPageElements extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
-    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -73,9 +73,7 @@ export interface SharedRichText extends Struct.ComponentSchema {
     displayName: 'Rich text';
     icon: 'align-justify';
   };
-  attributes: {
-    body: Schema.Attribute.RichText;
-  };
+  attributes: {};
 }
 
 export interface SharedSeo extends Struct.ComponentSchema {
