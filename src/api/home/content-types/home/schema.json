@@ -16,14 +16,9 @@
   },
   "attributes": {
     "banners": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "shared.banner-slide",
-      "repeatable": true
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::banner.banner"
     },
     "homeTitle": {
       "type": "string",
@@ -99,6 +94,11 @@
       },
       "component": "shared.page-elements",
       "repeatable": true
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
     }
   }
 }
