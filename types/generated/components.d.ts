@@ -21,6 +21,20 @@ export interface SharedBannerSlide extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedContact extends Struct.ComponentSchema {
+  collectionName: 'components_shared_contacts';
+  info: {
+    displayName: 'Contact';
+  };
+  attributes: {
+    Address: Schema.Attribute.String;
+    email: Schema.Attribute.Text;
+    MapAddress: Schema.Attribute.Text;
+    Phonenumber: Schema.Attribute.String;
+    Time: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedLinkOut extends Struct.ComponentSchema {
   collectionName: 'components_shared_link_outs';
   info: {
@@ -107,6 +121,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.banner-slide': SharedBannerSlide;
+      'shared.contact': SharedContact;
       'shared.link-out': SharedLinkOut;
       'shared.media': SharedMedia;
       'shared.page-elements': SharedPageElements;
