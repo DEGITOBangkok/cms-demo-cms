@@ -1,5 +1,5 @@
 {
-  "name": "cms",
+  "name": "degito-cms",
   "version": "0.1.0",
   "private": true,
   "description": "A Strapi application",
@@ -9,19 +9,18 @@
     "deploy": "strapi deploy",
     "dev": "strapi develop",
     "develop": "strapi develop",
-    "seed:example": "node ./scripts/seed.js",
     "start": "strapi start",
     "strapi": "strapi",
     "upgrade": "npx @strapi/upgrade latest",
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.23.3",
-    "@strapi/plugin-users-permissions": "5.23.3",
-    "@strapi/strapi": "5.23.3",
+    "@_sh/strapi-plugin-ckeditor": "^6.0.2",
+    "@strapi/plugin-cloud": "5.23.4",
+    "@strapi/plugin-seo": "^2.0.8",
+    "@strapi/plugin-users-permissions": "5.23.4",
+    "@strapi/strapi": "5.23.4",
     "better-sqlite3": "11.3.0",
-    "fs-extra": "^10.0.0",
-    "mime-types": "^2.1.27",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
@@ -38,7 +37,7 @@
     "npm": ">=6.0.0"
   },
   "strapi": {
-    "uuid": "5c5d65ec-a94c-484d-84b7-19e2274d72cc",
-    "installId": "ca5d88379dbe209bda1049f82d19314fe94748e60f75a3854d78b5e6e071d925"
+    "uuid": "09b92147-5a34-48ed-842d-59b06a32d3d5",
+    "installId": "eb297f3510483f1da83d4957b11dffd21bf77928abca4e659978fe7307ac6842"
   }
 }

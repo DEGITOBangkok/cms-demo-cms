@@ -74,19 +74,6 @@
             "target": "api::category.category",
             "inversedBy": "articles"
         },
-        "blocks": {
-            "type": "dynamiczone",
-            "pluginOptions": {
-                "i18n": {
-                    "localized": true
-                }
-            },
-            "components": [
-                "shared.media",
-                "shared.quote",
-                "shared.rich-text"
-            ]
-        },
         "tags": {
             "type": "string",
             "pluginOptions": {
@@ -110,12 +97,16 @@
                 "audios"
             ]
         },
-        "details": {
-            "type": "richtext",
+        "content": {
+            "type": "customField",
             "pluginOptions": {
                 "i18n": {
                     "localized": true
                 }
+            },
+            "customField": "plugin::ckeditor5.CKEditor",
+            "options": {
+                "preset": "defaultHtml"
             }
         }
     }

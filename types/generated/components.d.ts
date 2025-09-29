@@ -1,5 +1,50 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedBannerSlide extends Struct.ComponentSchema {
+  collectionName: 'components_shared_banner_slides';
+  info: {
+    displayName: 'bannerSlide';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    youtubeUrl: Schema.Attribute.String;
+  };
+}
+
+export interface SharedContact extends Struct.ComponentSchema {
+  collectionName: 'components_shared_contacts';
+  info: {
+    displayName: 'Contact';
+  };
+  attributes: {
+    Address: Schema.Attribute.String;
+    email: Schema.Attribute.Text;
+    MapAddress: Schema.Attribute.Text;
+    Phonenumber: Schema.Attribute.String;
+    Time: Schema.Attribute.Text;
+  };
+}
+
+export interface SharedLinkOut extends Struct.ComponentSchema {
+  collectionName: 'components_shared_link_outs';
+  info: {
+    displayName: 'linkOut';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -8,6 +53,18 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
   attributes: {
     file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+  };
+}
+
+export interface SharedPageElements extends Struct.ComponentSchema {
+  collectionName: 'components_shared_page_elements';
+  info: {
+    displayName: 'PageElements';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -30,9 +87,7 @@ export interface SharedRichText extends Struct.ComponentSchema {
     displayName: 'Rich text';
     icon: 'align-justify';
   };
-  attributes: {
-    body: Schema.Attribute.RichText;
-  };
+  attributes: {};
 }
 
 export interface SharedSeo extends Struct.ComponentSchema {
@@ -65,7 +120,11 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.banner-slide': SharedBannerSlide;
+      'shared.contact': SharedContact;
+      'shared.link-out': SharedLinkOut;
       'shared.media': SharedMedia;
+      'shared.page-elements': SharedPageElements;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
