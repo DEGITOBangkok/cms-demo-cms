@@ -4,14 +4,17 @@
   "info": {
     "singularName": "social",
     "pluralName": "socials",
-    "displayName": "Facebook"
+    "displayName": "Social"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "URL": {
+    "Facebook": {
+      "type": "string"
+    },
+    "Instagram": {
       "type": "string"
     }
   }
