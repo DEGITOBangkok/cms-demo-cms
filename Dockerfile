@@ -17,8 +17,8 @@ WORKDIR /app
 # Copy package files first for better caching
 COPY package*.json ./
 
-# Install dependencies with optimizations
-RUN npm ci --only=production --no-audit --no-fund && \
+# Install all dependencies (including dev dependencies for build)
+RUN npm ci --no-audit --no-fund && \
     npm cache clean --force
 
 # Copy source code
@@ -50,9 +50,9 @@ RUN mkdir -p data public/uploads && \
 # Switch to non-root user
 USER strapi
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-    CMD node healthcheck.js
+# Health check (optional - can be added later if needed)
+# HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+#     CMD curl -f http://localhost:1337/_health || exit 1
 
 # Expose port
 EXPOSE 1337
