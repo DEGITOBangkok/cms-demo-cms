@@ -22,8 +22,6 @@ dist/
 .idea/
 *.swp
 .DS_Store
-.env.example
-
 
 # Strapi
 data/data.db
