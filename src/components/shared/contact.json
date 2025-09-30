@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_contacts",
+  "info": {
+    "displayName": "Contact"
+  },
+  "options": {},
+  "attributes": {
+    "Address": {
+      "type": "string"
+    },
+    "email": {
+      "type": "text"
+    },
+    "Time": {
+      "type": "text"
+    },
+    "MapAddress": {
+      "type": "text"
+    },
+    "Phonenumber": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
