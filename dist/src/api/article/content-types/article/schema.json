@@ -24,7 +24,7 @@
                 }
             },
             "component": "shared.seo",
-            "repeatable": true
+            "repeatable": false
         },
         "title": {
             "type": "string",
@@ -73,14 +73,6 @@
             "relation": "manyToOne",
             "target": "api::category.category",
             "inversedBy": "articles"
-        },
-        "tags": {
-            "type": "string",
-            "pluginOptions": {
-                "i18n": {
-                    "localized": true
-                }
-            }
         },
         "gallery": {
             "type": "media",
