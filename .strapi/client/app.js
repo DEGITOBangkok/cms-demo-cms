@@ -6,6 +6,7 @@ import ckeditor5 from "@_sh/strapi-plugin-ckeditor/strapi-admin";
 import strapiCloud from "@strapi/plugin-cloud/strapi-admin";
 import seo from "@strapi/plugin-seo/strapi-admin";
 import usersPermissions from "@strapi/plugin-users-permissions/strapi-admin";
+import publisher from "strapi-plugin-publisher/strapi-admin";
 import { renderAdmin } from "@strapi/strapi/admin";
 
 renderAdmin(document.getElementById("strapi"), {
@@ -14,5 +15,6 @@ renderAdmin(document.getElementById("strapi"), {
     "strapi-cloud": strapiCloud,
     seo: seo,
     "users-permissions": usersPermissions,
+    publisher: publisher,
   },
 });

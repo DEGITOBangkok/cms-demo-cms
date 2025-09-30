@@ -15,6 +15,11 @@
       "type": "component",
       "component": "shared.contact",
       "repeatable": false
+    },
+    "SEO": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

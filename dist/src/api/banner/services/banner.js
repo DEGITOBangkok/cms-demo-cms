@@ -1,7 +1,7 @@
 "use strict";
 /**
- * instagram service
+ * banner service
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const strapi_1 = require("@strapi/strapi");
-exports.default = strapi_1.factories.createCoreService('api::instagram.instagram');
+exports.default = strapi_1.factories.createCoreService('api::banner.banner');
