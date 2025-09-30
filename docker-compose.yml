@@ -1,29 +1,25 @@
 version: '3.8'
 
 services:
-  strapi:
-    build: .
-    container_name: degito-cms
-    restart: unless-stopped
+  cms:
+    build:
+      context: .
+      dockerfile: Dockerfile.optimized
+      cache_from:
+        - degito-cms:latest
     ports:
       - "1337:1337"
     environment:
       - NODE_ENV=production
       - DATABASE_CLIENT=sqlite
-      - DATABASE_FILENAME=data/data.db
-      - APP_KEYS=fw+rWGry+g/sDnqiS1aeRA==,xnubFZfNqOmH3AkA4I24Mw==,3oHWtDNWzE16Cz+E15zh2A==,XRjQbRANs9QUviON5iwAHw==
-      - API_TOKEN_SALT=NcW82ng2vLSuMKFMqrv20g==
-      - ADMIN_JWT_SECRET=ZscYvCG7b/3SBy1aaLl2kQ==
-      - TRANSFER_TOKEN_SALT=cZZr3dYyXipk7Dc5qCtWlA==t
-      - ENCRYPTION_KEY=zAp9rZY5xeODBO6V4FzUvw==
-      - JWT_SECRET=jBtZ7P+IUTK6qHOgYXt+E15zh2A==
+      - DATABASE_FILENAME=./data/data.db
     volumes:
-      # Persist database and uploads
-      - ./data:/opt/app/data
-      - ./public/uploads:/opt/app/public/uploads
-    networks:
-      - strapi-network
-
-networks:
-  strapi-network:
-    driver: bridge
+      - ./data:/app/data
+      - ./public/uploads:/app/public/uploads
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "healthcheck.js"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
