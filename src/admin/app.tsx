@@ -177,10 +177,7 @@ export default {
         background: rgba(245, 149, 149, 0.96) !important;
       }
       
-      .cIoXGJ:hover {
-        background: rgb(230, 0, 0) !important;
-        color: rgb(255, 255, 255) !important;
-      }
+
       
       /* SVG styling for cIoXGJ hover */
       .cIoXGJ:hover svg,
@@ -287,6 +284,12 @@ export default {
       }
       
       /* 9. DROPDOWN STYLING */
+      /* Non-hover state - black text on white background */
+      .dDfGrE:not([data-disabled]) > .sc-fSwKIM .sc-dYsygx {
+        color: black !important;
+      }
+      
+      /* Hover state - white text on red background */
       .dDfGrE:not([data-disabled]):hover > .sc-fSwKIM .sc-dYsygx,
       .dDfGrE:not([data-disabled])[data-state='open'] > .sc-fSwKIM .sc-dYsygx {
         background-color: rgb(255, 123, 132) !important;
@@ -309,6 +312,22 @@ export default {
       .sc-biMVnu.gyLppJ.sc-eBIPcU.fDGhCK,
       [class*="sc-biMVnu gLUaOg sc-eUkiUm jIJgV sc-biMVnu hutJZB sc-fEETNT jtRUlM sc-fdOGDD fHlMsU"] * {
         color: white !important;
+      }
+      
+      /* Remove hover text effects for fDGhCK */
+      .fDGhCK {
+        color: inherit !important;
+      }
+      
+      /* cPFtpB with aria-expanded="true" - grey text */
+      .cPFtpB[aria-expanded="true"] {
+        color: #8e8ea9 !important;
+      }
+      
+      /* Dropdown with data-state open - black text, no background */
+      .sc-fqdHUJ.jSowaA[data-state="open"] {
+        color: black !important;
+        background: none !important;
       }
       
       .gMZHjq,
