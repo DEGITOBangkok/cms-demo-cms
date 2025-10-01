@@ -119,6 +119,7 @@ export default {
       }
       
       /* Specific active class combination - no background */
+      .jLaRmI[dir="ltr"],
       .sc-biMVnu.gLUaOg.sc-eUkiUm.jIJgV.sc-egFxlz.ftaVBk.active {
         background: none !important;
       }
@@ -497,6 +498,8 @@ export default {
         fill: rgb(0, 0, 0) !important;
         color: rgb(0, 0, 0) !important;
       }
+
+      
 
     `;
     document.head.appendChild(style);
