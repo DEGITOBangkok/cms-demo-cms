@@ -1,32 +1,61 @@
-# Creating multi-stage build for production
-FROM node:22-alpine AS build
-RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev vips-dev git > /dev/null 2>&1
-ARG NODE_ENV=production
-ENV NODE_ENV=${NODE_ENV}
+# Multi-stage build for optimized production image
+FROM node:22-alpine AS base
 
-WORKDIR /opt/
-COPY package.json package-lock.json ./
-RUN npm install -g node-gyp
-RUN npm config set fetch-retry-maxtimeout 600000 -g && npm install --force
-ENV PATH=/opt/node_modules/.bin:$PATH
-WORKDIR /opt/app
+# Install system dependencies
+RUN apk add --no-cache \
+    python3 \
+    make \
+    g++ \
+    vips-dev \
+    && rm -rf /var/cache/apk/*
+
+# Build stage
+FROM base AS build
+
+WORKDIR /app
+
+# Copy package files first for better caching
+COPY package*.json ./
+
+# Install all dependencies (including dev dependencies for build)
+RUN npm ci --no-audit --no-fund && \
+    npm cache clean --force
+
+# Copy source code
 COPY . .
-# Clean install and rebuild to fix version conflicts
-RUN npm ci --force
+
+# Build the application
 RUN npm run build
 
-# Creating final production image
-FROM node:22-alpine
-RUN apk add --no-cache vips-dev
-ARG NODE_ENV=production
-ENV NODE_ENV=${NODE_ENV}
-WORKDIR /opt/
-COPY --from=build /opt/node_modules ./node_modules
-WORKDIR /opt/app
-COPY --from=build /opt/app ./
-ENV PATH=/opt/node_modules/.bin:$PATH
+# Production stage
+FROM node:22-alpine AS production
 
-RUN chown -R node:node /opt/app
-USER node
+# Install only runtime dependencies
+RUN apk add --no-cache vips-dev && \
+    rm -rf /var/cache/apk/*
+
+# Create non-root user
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S strapi -u 1001
+
+WORKDIR /app
+
+# Copy built application from build stage
+COPY --from=build --chown=strapi:nodejs /app ./
+
+# Create necessary directories with proper permissions
+RUN mkdir -p data public/uploads && \
+    chown -R strapi:nodejs data public/uploads
+
+# Switch to non-root user
+USER strapi
+
+# Health check (optional - can be added later if needed)
+# HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+#     CMD curl -f http://localhost:1337/_health || exit 1
+
+# Expose port
 EXPOSE 1337
-CMD ["npm", "run", "start"]
+
+# Use exec form for better signal handling
+CMD ["npm", "start"]

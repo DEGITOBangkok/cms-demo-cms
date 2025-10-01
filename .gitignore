@@ -1,4 +1,28 @@
+# Node.js
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Next.js
+.next/
+out/
+dist/
+.vercel/
+
+# Env files
 .env
 .env.example
+.env.local
+.env.*.local
+
+# Editor
+.vscode/
+.idea/
+*.swp
 .DS_Store
+
+# Strapi
 data/data.db
+.strapi/
