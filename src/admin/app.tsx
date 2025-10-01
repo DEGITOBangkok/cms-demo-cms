@@ -2,80 +2,80 @@ import type { StrapiApp } from '@strapi/strapi/admin';
 
 // Simple theme configuration with E60000 color
 const customTheme = {
-    colors: {
-        primary500: '#E60000',
-        primary600: '#E60000',
-        primary700: '#cc0000',
-        buttonPrimary500: '#E60000',
-        buttonPrimary600: '#cc0000',
-    },
+  colors: {
+    primary500: '#E60000',
+    primary600: '#E60000',
+    primary700: '#cc0000',
+    buttonPrimary500: '#E60000',
+    buttonPrimary600: '#cc0000',
+  },
 };
 
 export default {
-    config: {
-        locales: [
-            'th', // Thai language support
-            // 'ar',
-            // 'fr',
-            // 'cs',
-            // 'de',
-            // 'dk',
-            // 'es',
-            // 'he',
-            // 'id',
-            // 'it',
-            // 'ja',
-            // 'ko',
-            // 'ms',
-            // 'nl',
-            // 'no',
-            // 'pl',
-            // 'pt-BR',
-            // 'pt',
-            // 'ru',
-            // 'sk',
-            // 'sv',
-            // 'tr',
-            // 'uk',
-            // 'vi',
-            // 'zh-Hans',
-            // 'zh',
-        ],
-        theme: customTheme,
-        head: {
-            favicon: '/favicon.png',
-        },
+  config: {
+    locales: [
+      'th', // Thai language support
+      // 'ar',
+      // 'fr',
+      // 'cs',
+      // 'de',
+      // 'dk',
+      // 'es',
+      // 'he',
+      // 'id',
+      // 'it',
+      // 'ja',
+      // 'ko',
+      // 'ms',
+      // 'nl',
+      // 'no',
+      // 'pl',
+      // 'pt-BR',
+      // 'pt',
+      // 'ru',
+      // 'sk',
+      // 'sv',
+      // 'tr',
+      // 'uk',
+      // 'vi',
+      // 'zh-Hans',
+      // 'zh',
+    ],
+    theme: customTheme,
+    head: {
+      favicon: '/favicon.png',
     },
-    bootstrap(app: StrapiApp) {
-        console.log('🎨 E60000 Theme Loaded!');
+  },
+  bootstrap(app: StrapiApp) {
+    console.log('🎨 E60000 Theme Loaded!');
 
-        // Change page title
-        document.title = 'CMS Admin';
+    // Change page title
+    document.title = 'CMS Admin';
 
-        // Debug function to inspect button elements
-        (window as any).debugButtons = () => {
-            console.log('🔍 Button Debug Info:');
-            console.log('All buttons:', document.querySelectorAll('button'));
-            console.log('Button with "Create API Token":', document.querySelector('button:contains("Create API Token")'));
-            console.log('Buttons with role="button":', document.querySelectorAll('[role="button"]'));
+    // Debug function to inspect button elements
+    (window as any).debugButtons = () => {
+      console.log('🔍 Button Debug Info:');
+      console.log('All buttons:', document.querySelectorAll('button'));
+      console.log('Button with "Create API Token":', document.querySelector('button:contains("Create API Token")'));
+      console.log('Buttons with role="button":', document.querySelectorAll('[role="button"]'));
 
-            // Check computed styles
-            const buttons = document.querySelectorAll('button');
-            buttons.forEach((btn, index) => {
-                if (btn.textContent.includes('Create') || btn.textContent.includes('API')) {
-                    console.log(`Button ${index}:`, {
-                        text: btn.textContent,
-                        computedColor: getComputedStyle(btn).color,
-                        className: btn.className,
-                        id: btn.id
-                    });
-                }
-            });
-        };
+      // Check computed styles
+      const buttons = document.querySelectorAll('button');
+      buttons.forEach((btn, index) => {
+        if (btn.textContent.includes('Create') || btn.textContent.includes('API')) {
+          console.log(`Button ${index}:`, {
+            text: btn.textContent,
+            computedColor: getComputedStyle(btn).color,
+            className: btn.className,
+            id: btn.id
+          });
+        }
+      });
+    };
 
-        // Simple CSS for E60000 theme
-        const style = document.createElement('style');
-        style.textContent = `
+    // Simple CSS for E60000 theme
+    const style = document.createElement('style');
+    style.textContent = `
       /* ===== E60000 RED THEME ===== */
       
       /* 1. HEADER STYLING */
@@ -119,6 +119,7 @@ export default {
       }
       
       /* Specific active class combination - no background */
+      .jLaRmI[dir="ltr"],
       .sc-biMVnu.gLUaOg.sc-eUkiUm.jIJgV.sc-egFxlz.ftaVBk.active {
         background: none !important;
       }
@@ -230,6 +231,7 @@ export default {
       
       .lbdmvl svg,
       .cKyIch path,
+      .iiZyjm:focus,
       .cKyIch path *,
       .hLDDnY svg,
       .jjXEOO svg,
@@ -238,6 +240,8 @@ export default {
       .hLDDnY *,
       .iyGaEL *,
       .VxfeP path,
+      .doUwfF[data-state="open"],
+      [data-state="unchecked"]:hover svg,
       .sc-biMVnu.gLUaOg.sc-eUkiUm.jIJgV.sc-biMVnu.hutJZB.sc-fEETNT.jtRUlM.sc-fdOGDD.hQoytw,
       .sc-biMVnu.gLUaOg.sc-eUkiUm.jIJgV.sc-biMVnu.hutJZB.sc-fEETNT.jtRUlM.sc-fdOGDD.lbdmvl,
       .cgBZXP path,
@@ -248,22 +252,11 @@ export default {
         fill: rgb(255, 255, 255) !important;
         stroke: rgb(255, 255, 255) !important;
       }
-      
-      /* 8. DATA STATE STYLING */
-      [data-state="open"] {
-        background: rgb(220, 157, 161) !important;
-        color: rgb(255, 255, 255) !important;
-      }
-      
-      [data-state="closed"]:hover,
-      [data-state="closed"]:hover svg {
-        fill: rgb(255, 255, 255) !important;
-        color: rgb(255, 255, 255) !important;
-        stroke: rgb(255, 255, 255) !important;
-      }
+    
       
       /* AgPfA with data-state open */
       .AgPfA[data-orientation="vertical"],
+      [data-state="unchecked"],
       .AgPfA[data-orientation="vertical"]:hover {
         background: none !important;
         color: black !important;
@@ -287,6 +280,12 @@ export default {
       }
       
       /* 9. DROPDOWN STYLING */
+      /* Non-hover state - black text on white background */
+      .dDfGrE:not([data-disabled]) > .sc-fSwKIM .sc-dYsygx {
+        color: black !important;
+      }
+      
+      /* Hover state - white text on red background */
       .dDfGrE:not([data-disabled]):hover > .sc-fSwKIM .sc-dYsygx,
       .dDfGrE:not([data-disabled])[data-state='open'] > .sc-fSwKIM .sc-dYsygx {
         background-color: rgb(255, 123, 132) !important;
@@ -303,12 +302,36 @@ export default {
         fill: rgb(255, 255, 255) !important;
         stroke: rgb(255, 255, 255) !important;
       }
+
+      
+      /* Dropdown open state - pink background, white text */
+      .dDfGrE:not([data-disabled])[data-state='closed']:hover,
+      .dDfGrE:not([data-disabled])[data-state='open']:hover,
+      .dDfGrE:not([data-disabled])[data-state='open']{
+        background: rgb(255, 216, 216) !important;
+      }
       
       /* 10. SPECIAL CLASSES */
       .lnXrMG,
       .sc-biMVnu.gyLppJ.sc-eBIPcU.fDGhCK,
       [class*="sc-biMVnu gLUaOg sc-eUkiUm jIJgV sc-biMVnu hutJZB sc-fEETNT jtRUlM sc-fdOGDD fHlMsU"] * {
         color: white !important;
+      }
+      
+      /* Remove hover text effects for fDGhCK */
+      .fDGhCK {
+        color: inherit !important;
+      }
+      
+      /* cPFtpB with aria-expanded="true" - grey text */
+      .cPFtpB[aria-expanded="true"] {
+        color: #8e8ea9 !important;
+      }
+      
+      /* Dropdown with data-state open - black text, no background */
+      .sc-fqdHUJ.jSowaA[data-state="open"] {
+        color: black !important;
+        background: none !important;
       }
       
       .gMZHjq,
@@ -352,6 +375,8 @@ export default {
       .sc-biMVnu hWKkhu sc-fEETNT jPaZnx:hover,
       [class*="css-3r9uaq"],
       .lCPOf .container input:checked~div,
+      .gMJoFE:hover,
+      .bXiYyu .container input:checked~div,
       [data-radix-focus-guard][tabindex="0"] {
         background: rgb(255, 238, 238) !important;
       }
@@ -381,6 +406,18 @@ export default {
       .kQCTkf:hover svg,
       .kQCTkf:hover svg * {
         fill: #8e8ea9  !important;
+      }
+      
+      /* Delete button - red background with white SVG */
+      button.gNIxuT[name="delete"][type="button"][aria-haspopup="dialog"] {
+        background:#cc0000 !important;
+      }
+      
+      button.gNIxuT[name="delete"][type="button"][aria-haspopup="dialog"] svg,
+      button.gNIxuT[name="delete"][type="button"][aria-haspopup="dialog"] svg * {
+        fill: rgb(255, 255, 255) !important;
+        color: rgb(255, 255, 255) !important;
+        stroke: rgb(255, 255, 255) !important;
       }
       
       /* 13. FOCUS/BORDER REMOVAL */
@@ -443,8 +480,28 @@ export default {
        .bWkfGq  {
          background: none !important;
        }
+         
+        .jvTske[data-state="open"]{
+        background: rgb(255, 255, 255) !important;
+        color: rgb(0, 0, 0) !important;
+       }
+       .cnJuJo[data-state="open"] {
+        background: rgb(255, 255, 255,0.5) !important;
+        color: rgb(0, 0, 0) !important;
+       }
+
+             .doUwfF[data-state="open"],{
+             box-shadow: none !important;
+             }
+
+      .gNIxuT svg{
+        fill: rgb(0, 0, 0) !important;
+        color: rgb(0, 0, 0) !important;
+      }
+
+      
 
     `;
-        document.head.appendChild(style);
-    },
+    document.head.appendChild(style);
+  },
 };

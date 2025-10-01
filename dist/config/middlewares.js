@@ -3,13 +3,31 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = [
     'strapi::logger',
     'strapi::errors',
-    'strapi::security',
+    {
+        name: 'strapi::security',
+        config: {
+            contentSecurityPolicy: {
+                useDefaults: true,
+                directives: {
+                    'img-src': ["*", "data:", "blob:"],
+                    'media-src': ["*", "data:", "blob:"],
+                },
+            },
+        },
+    },
     {
         name: 'strapi::cors',
         config: {
             enabled: true,
             headers: '*',
-            origin: ['http://localhost:3000', 'http://localhost:1337', 'http://0.0.0.0:1337', 'http://127.0.0.1:1337'],
+            origin: [
+                'http://localhost:3000',
+                'http://localhost:1337',
+                'http://0.0.0.0:1337',
+                'http://127.0.0.1:1337',
+                'https://demoweb.degitosandbox.com',
+                'https://democms.degitosandbox.com',
+            ],
         },
     },
     'strapi::poweredBy',

@@ -1,26 +1,5 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface SharedBannerSlide extends Struct.ComponentSchema {
-  collectionName: 'components_shared_banner_slides';
-  info: {
-    displayName: 'bannerSlide';
-  };
-  attributes: {
-    description: Schema.Attribute.RichText &
-      Schema.Attribute.Required &
-      Schema.Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'defaultHtml';
-        }
-      >;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    youtubeUrl: Schema.Attribute.String;
-  };
-}
-
 export interface SharedContact extends Struct.ComponentSchema {
   collectionName: 'components_shared_contacts';
   info: {
@@ -28,10 +7,20 @@ export interface SharedContact extends Struct.ComponentSchema {
   };
   attributes: {
     Address: Schema.Attribute.String;
-    email: Schema.Attribute.Text;
+    email: Schema.Attribute.String;
     MapAddress: Schema.Attribute.Text;
     Phonenumber: Schema.Attribute.String;
     Time: Schema.Attribute.Text;
+  };
+}
+
+export interface SharedImage extends Struct.ComponentSchema {
+  collectionName: 'components_shared_images';
+  info: {
+    displayName: 'image';
+  };
+  attributes: {
+    Img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -99,7 +88,13 @@ export interface SharedSeo extends Struct.ComponentSchema {
     name: 'Seo';
   };
   attributes: {
-    metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    canonicalUrl: Schema.Attribute.String & Schema.Attribute.Required;
+    metaDescription: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 150;
+        minLength: 50;
+      }>;
     metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
     shareImage: Schema.Attribute.Media<'images'>;
   };
@@ -117,11 +112,21 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedVideo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_videos';
+  info: {
+    displayName: 'video';
+  };
+  attributes: {
+    youtubeUrl: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'shared.banner-slide': SharedBannerSlide;
       'shared.contact': SharedContact;
+      'shared.image': SharedImage;
       'shared.link-out': SharedLinkOut;
       'shared.media': SharedMedia;
       'shared.page-elements': SharedPageElements;
@@ -129,6 +134,7 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.video': SharedVideo;
     }
   }
 }

@@ -4,7 +4,7 @@
     "info": {
         "singularName": "social",
         "pluralName": "socials",
-        "displayName": "Social"
+        "displayName": "03. Social"
     },
     "options": {
         "draftAndPublish": true

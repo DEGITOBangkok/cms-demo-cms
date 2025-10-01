@@ -2,4 +2,20 @@ export default () => ({
     seo: {
         enabled: true,
     },
+    publisher: {
+        enabled: true,
+        config: {
+          // แสดงปุ่ม/ฟีเจอร์ Publisher แค่ใน 2 content types นี้
+          contentTypes: [
+            'api::article.article',
+            'api::banner.banner',
+          ],
+          // (ออปชันเสริม) hook ก่อน/หลัง publish-unpublish
+          hooks: {
+            beforePublish: async ({ uid, entity, strapi }) => {
+              // return false เพื่อบล็อกการ publish ได้
+            },
+          },
+        },
+      },
 });

@@ -4,7 +4,7 @@
     "info": {
         "singularName": "home",
         "pluralName": "homes",
-        "displayName": "Home"
+        "displayName": "01. Home"
     },
     "options": {
         "draftAndPublish": true
@@ -34,7 +34,10 @@
                 "i18n": {
                     "localized": true
                 }
-            }
+            },
+            "minLength": 10,
+            "maxLength": 160,
+            "required": true
         },
         "exploreButton": {
             "type": "string",
