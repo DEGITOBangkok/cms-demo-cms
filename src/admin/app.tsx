@@ -42,9 +42,15 @@ export default {
             // 'zh',
         ],
         theme: customTheme,
+        head: {
+            favicon: '/favicon.png',
+        },
     },
     bootstrap(app: StrapiApp) {
         console.log('🎨 E60000 Theme Loaded!');
+
+        // Change page title
+        document.title = 'CMS Admin';
 
         // Debug function to inspect button elements
         (window as any).debugButtons = () => {
@@ -81,12 +87,29 @@ export default {
       
       /* 2. SIDEBAR STYLING */
       nav {
-        background: linear-gradient(180deg, #ffffff 0%, rgb(255, 243, 243) 100%) !important;
+        background: white !important;
       }
       
       /* 3. LINKS STYLING */
       a:not(button):not([role="button"]) {
         color: #E60000 !important;
+      }
+      
+      /* Links that open in new tab */
+      a[target="_blank"]:not(button):not([role="button"]) {
+        color:rgb(255, 255, 255) !important;
+      }
+      
+      /* Links with text-decoration none */
+      a[style*="text-decoration: none"]:not(button):not([role="button"]),
+      a[style*="text-decoration:none"]:not(button):not([role="button"]) {
+        color: rgb(255, 255, 255) !important;
+        text-decoration: none !important;
+      }
+      
+      /* Specific href links */
+      a[href="/admin/settings/webhooks/create"]:not(button):not([role="button"]) {
+        color: rgb(255, 255, 255) !important;
       }
       
       /* 4. ACTIVE ITEMS */
@@ -96,7 +119,7 @@ export default {
       }
       
       .kcQkRk.active > div {
-        background: rgb(239, 89, 99) !important;
+        background: rgb(30, 27, 27) !important;
         color: rgb(255, 255, 255) !important;
       }
       
@@ -104,12 +127,11 @@ export default {
       [data-testid*="button"] {
         background: rgb(255, 219, 219) !important;
         border-color: #E60000 !important;
-        color: white !important;
+        color: #E60000 !important;
       }
       
       /* Red Button Classes */
       .sc-biMVnu.hutJZB.sc-fEETNT.jtRUlM.sc-fdOGDD.dCiuLR,
-      .sc-biMVnu.kJZMgz.sc-fEETNT.jtRUlM.sc-fdOGDD.hQoytw,
       .sc-biMVnu.hutJZB.sc-fEETNT.jtRUlM.sc-fdOGDD.eryDNk,
       .sc-biMVnu.cwpumT.sc-fEETNT.jtRUlM.sc-fdOGDD.eryDNk {
         background: rgb(212, 18, 18) !important;
@@ -179,22 +201,20 @@ export default {
       }
       
       /* 7. CIRCLE BUTTONS (PLUS SYMBOLS) */
-      .cKyIch,
-      .hLDDnY {
-        background-color: rgb(230, 0, 0) !important;
-        color: rgb(255, 255, 255) !important;
-        border-radius: 50% !important;
-        border: none !important;
-      }
+
       
-      .cKyIch svg,
-      .cKyIch svg *,
-      .cKyIch *,
       .lbdmvl svg,
+      .cKyIch path,
+      .cKyIch path *,
       .hLDDnY svg,
+      .jjXEOO svg,
+      .jjXEOO svg *,
       .hLDDnY svg *,
       .hLDDnY *,
+      .iyGaEL *,
       .VxfeP path,
+      .sc-biMVnu.gLUaOg.sc-eUkiUm.jIJgV.sc-biMVnu.hutJZB.sc-fEETNT.jtRUlM.sc-fdOGDD.hQoytw,
+      .sc-biMVnu.gLUaOg.sc-eUkiUm.jIJgV.sc-biMVnu.hutJZB.sc-fEETNT.jtRUlM.sc-fdOGDD.lbdmvl,
       .cgBZXP path,
       .guTTOk svg path,
       .jKOxX svg path,
@@ -217,8 +237,19 @@ export default {
         stroke: rgb(255, 255, 255) !important;
       }
       
+      /* AgPfA with data-state open */
+      .AgPfA[data-orientation="vertical"],
+      .AgPfA[data-orientation="vertical"]:hover {
+        background: none !important;
+        color: black !important;
+      }
       
-      [data-orientation="vertical"]:hover {
+      /* Menu items hover */
+      [role="menuitem"]:hover {
+        background: none !important;
+      }
+      
+      .dDfGrE[data-orientation="vertical"]:hover {
         background: rgb(220, 157, 161) !important;
       }
       
@@ -247,6 +278,8 @@ export default {
         color: white !important;
       }
       
+      .gMZHjq,
+      .hONHGK,
       .dppjTS {
         background: rgb(255, 237, 237) !important;
       }
@@ -264,11 +297,14 @@ export default {
       .guTTOk,
       .cKyIch,
       .DlEVMa,
-      .QOLeH,
       .jKOxX,
+      .QOLeH,
+      .jjXEOO,
       .cIoXGJ:hover,
+      [data-state="unchecked"]:hover,
       .fxpKbY,
       .lbdmvl,
+      a[href="/admin/content-manager/collection-types/plugin::users-permissions.user/create"]:not(button):not([role="button"]),
       .VxfeP {
         background: rgb(213, 0, 0) !important;
         color: rgb(255, 255, 255) !important;
@@ -278,11 +314,16 @@ export default {
       .eryDNk,
       .sc-biMVnu.hCRpDc.sc-fEETNT.kMOJHi.sc-dPKWQb.dWnVTT.sc-bruwDQ.buWeOZ,
       .css-3r9uaq div,
+      .doQLPW,
+      .sc-biMVnu hWKkhu sc-fEETNT jPaZnx:active,
+      .sc-biMVnu hWKkhu sc-fEETNT jPaZnx:hover,
       [class*="css-3r9uaq"] {
         background: rgb(255, 238, 238) !important;
       }
       
       /* 12. BLACK TEXT ELEMENTS */
+      .iuxVNm,
+      .ftfKfW,
       .hkCDaM svg,
       .sc-biMVnu.hCRpDc.sc-fEETNT.kZxVIC {
         fill: rgb(0, 0, 0) !important;
@@ -356,6 +397,7 @@ export default {
        .bWkfGq  {
          background: none !important;
        }
+
     `;
         document.head.appendChild(style);
     },
