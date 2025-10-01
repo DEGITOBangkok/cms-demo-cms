@@ -118,6 +118,31 @@ export default {
         color: #E60000 !important;
       }
       
+      /* Specific active class combination - no background */
+      .sc-biMVnu.gLUaOg.sc-eUkiUm.jIJgV.sc-egFxlz.ftaVBk.active {
+        background: none !important;
+      }
+      
+      /* Active SVG - red color with higher specificity */
+      .active svg,
+      .active svg *,
+      a.active svg,
+      a.active svg * {
+        fill: #E60000 !important;
+        color: #E60000 !important;
+        stroke-width: inherit !important;
+      }
+      
+      /* Preserve stroke on click/hold (active state) */
+      button:active svg,
+      button:active svg *,
+      a:active svg,
+      a:active svg *,
+      [role="button"]:active svg,
+      [role="button"]:active svg * {
+        stroke-width: inherit !important;
+      }
+      
       .kcQkRk.active > div {
         background: rgb(30, 27, 27) !important;
         color: rgb(255, 255, 255) !important;
@@ -249,6 +274,14 @@ export default {
         background: none !important;
       }
       
+      /* Selected menu item hover - override blue with red */
+      [role="menuitem"][aria-current="true"],
+      [role="menuitem"][data-state="checked"],
+      [role="option"][aria-selected="true"] {
+        background: #cc0000 !important;
+        color: white !important;
+      }
+      
       .dDfGrE[data-orientation="vertical"]:hover {
         background: rgb(220, 157, 161) !important;
       }
@@ -317,7 +350,9 @@ export default {
       .doQLPW,
       .sc-biMVnu hWKkhu sc-fEETNT jPaZnx:active,
       .sc-biMVnu hWKkhu sc-fEETNT jPaZnx:hover,
-      [class*="css-3r9uaq"] {
+      [class*="css-3r9uaq"],
+      .lCPOf .container input:checked~div,
+      [data-radix-focus-guard][tabindex="0"] {
         background: rgb(255, 238, 238) !important;
       }
       
@@ -325,14 +360,27 @@ export default {
       .iuxVNm,
       .ftfKfW,
       .hkCDaM svg,
-      .sc-biMVnu.hCRpDc.sc-fEETNT.kZxVIC {
+      .eryDNk[aria-disabled='true']:hover,
+      .eryDNk[aria-disabled='true']:hover svg,
+      .sc-biMVnu.hCRpDc.sc-fEETNT.kZxVIC,
+      .sc-fSrMxd.fdJuxD svg,
+      svg[aria-hidden="true"].sc-biMVnu.hCRpDc.sc-fEETNT.kZxVIC,
+      svg[aria-hidden="true"].sc-biMVnu.hCRpDc.sc-fEETNT.kZxVIC * {
         fill: rgb(0, 0, 0) !important;
         color: rgb(0, 0, 0) !important;
       }
       
+
+      
       /* Gray SVG styling */
       .dLPymG svg {
         fill: #8e8ea9 !important;
+      }
+      
+      /* Remove hover SVG effects */
+      .kQCTkf:hover svg,
+      .kQCTkf:hover svg * {
+        fill: #8e8ea9  !important;
       }
       
       /* 13. FOCUS/BORDER REMOVAL */
@@ -340,11 +388,9 @@ export default {
       [data-state]:active,
       [data-state]:focus-visible,
       [data-state]:focus-within,
-      [data-state]:hover,
       [data-state] *:focus,
       [data-state] *:active,
-      [data-state] *:focus-visible,
-      [data-state] *:hover {
+      [data-state] *:focus-visible {
         border-color: transparent !important;
         outline: none !important;
         box-shadow: none !important;
