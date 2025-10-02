@@ -9,16 +9,59 @@
     "options": {
         "draftAndPublish": true
     },
-    "pluginOptions": {},
+    "pluginOptions": {
+        "i18n": {
+            "localized": true
+        }
+    },
     "attributes": {
-        "ContactForm": {
+        "ContactDetail": {
             "type": "component",
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            },
             "component": "shared.contact",
-            "repeatable": false
+            "repeatable": false,
+            "required": true
         },
         "SEO": {
             "type": "component",
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            },
             "component": "shared.seo",
+            "repeatable": false
+        },
+        "contactTitle": {
+            "type": "string",
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            },
+            "required": true
+        },
+        "contactDesc": {
+            "type": "text",
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            },
+            "required": true
+        },
+        "ContactFill": {
+            "type": "component",
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            },
+            "component": "shared.contact-form-field",
             "repeatable": false
         }
     }

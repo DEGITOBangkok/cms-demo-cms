@@ -26,7 +26,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "homeDesc": {
       "type": "text",
@@ -65,11 +66,10 @@
         }
       },
       "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
     },
     "homeNewsTitle": {
@@ -78,7 +78,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "homeNewsDesc": {
       "type": "text",
@@ -86,7 +87,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "homeDetails": {
       "type": "component",
@@ -96,7 +98,10 @@
         }
       },
       "component": "shared.page-elements",
-      "repeatable": true
+      "repeatable": true,
+      "required": true,
+      "min": 3,
+      "max": 3
     },
     "articles": {
       "type": "relation",

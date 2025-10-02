@@ -78,6 +78,7 @@ const config = {
     },
 };
 
+
 const bootstrap = (app: StrapiApp) => {
     const styleTag = document.createElement("style");
     styleTag.innerText = `

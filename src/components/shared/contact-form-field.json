@@ -1,0 +1,48 @@
+{
+  "collectionName": "components_shared_contact_form_fields",
+  "info": {
+    "displayName": "ContactFormField"
+  },
+  "options": {},
+  "attributes": {
+    "firstName": {
+      "type": "component",
+      "component": "shared.label",
+      "repeatable": false,
+      "required": false
+    },
+    "lastName": {
+      "type": "component",
+      "component": "shared.label",
+      "repeatable": false,
+      "required": false
+    },
+    "email": {
+      "type": "component",
+      "component": "shared.label",
+      "repeatable": false
+    },
+    "phoneNumber": {
+      "type": "component",
+      "component": "shared.label",
+      "repeatable": false
+    },
+    "message": {
+      "type": "component",
+      "component": "shared.label",
+      "repeatable": false
+    },
+    "contactFileRule": {
+      "type": "string"
+    },
+    "attachment": {
+      "type": "component",
+      "component": "shared.label",
+      "repeatable": false
+    },
+    "privacy": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

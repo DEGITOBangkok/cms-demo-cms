@@ -4,7 +4,7 @@
     "info": {
         "singularName": "banner",
         "pluralName": "banners",
-        "displayName": "0.3.1 Banner"
+        "displayName": "0.2.1 Banner"
     },
     "options": {
         "draftAndPublish": true
@@ -35,46 +35,19 @@
             },
             "customField": "plugin::ckeditor5.CKEditor",
             "options": {
-                "preset": "defaultHtml"
-            }
-        },
-        "image": {
-            "type": "media",
-            "pluginOptions": {
-                "i18n": {
-                    "localized": true
-                }
+                "preset": "defaultHtml",
+                "maxLengthCharacters": null,
+                "maxLengthWords": 30
             },
-            "multiple": false,
-            "allowedTypes": [
-                "images",
-                "files",
-                "videos",
-                "audios"
-            ]
+            "required": true
         },
-        "youtubeUrl": {
+        "contentUrl": {
             "type": "string",
             "pluginOptions": {
                 "i18n": {
                     "localized": true
                 }
             }
-        },
-        "thumbnail": {
-            "type": "media",
-            "pluginOptions": {
-                "i18n": {
-                    "localized": true
-                }
-            },
-            "multiple": false,
-            "allowedTypes": [
-                "images",
-                "files",
-                "videos",
-                "audios"
-            ]
         },
         "media": {
             "type": "dynamiczone",
@@ -86,7 +59,10 @@
             "components": [
                 "shared.image",
                 "shared.video"
-            ]
+            ],
+            "required": true,
+            "min": 1,
+            "max": 1
         }
     }
 }
