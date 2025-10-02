@@ -183,6 +183,14 @@ export default {
         color: rgb(255, 255, 255) !important;
       }
       
+      /* cIoXGJ active, focus, hover - first child styling */
+      .cIoXGJ.active > div:first-child,
+      .cIoXGJ:focus > div:first-child,
+      .cIoXGJ:hover > div:first-child {
+        background: rgb(255, 129, 129) !important;
+        color: rgb(0, 0, 0) !important;
+      }
+      
       /* SVG styling for cIoXGJ hover */
       .cIoXGJ:hover svg,
       .cIoXGJ:hover svg *,
@@ -240,6 +248,7 @@ export default {
       .hLDDnY *,
       .iyGaEL *,
       .VxfeP path,
+      .ftfKfW,
       .doUwfF[data-state="open"],
       [data-state="unchecked"]:hover svg,
       .sc-biMVnu.gLUaOg.sc-eUkiUm.jIJgV.sc-biMVnu.hutJZB.sc-fEETNT.jtRUlM.sc-fdOGDD.hQoytw,
@@ -247,7 +256,9 @@ export default {
       .cgBZXP path,
       .guTTOk svg path,
       .jKOxX svg path,
-      .dNTDVm svg path {
+      .dNTDVm svg path,
+      .enNCTg > path,
+      .ghfast > path {
         color: rgb(255, 255, 255) !important;
         fill: rgb(255, 255, 255) !important;
         stroke: rgb(255, 255, 255) !important;
@@ -275,6 +286,7 @@ export default {
         color: white !important;
       }
       
+      
       .dDfGrE[data-orientation="vertical"]:hover {
         background: rgb(220, 157, 161) !important;
       }
@@ -298,17 +310,26 @@ export default {
       .dDfGrE:not([data-disabled])[data-state='open'] > .sc-fSwKIM .sc-cbrqwu svg,
       .dDfGrE:not([data-disabled]):hover > .sc-fSwKIM .sc-cbrqwu svg *,
       .dDfGrE:not([data-disabled])[data-state='open'] > .sc-fSwKIM .sc-cbrqwu svg * {
-        color: rgb(255, 255, 255) !important;
-        fill: rgb(255, 255, 255) !important;
-        stroke: rgb(255, 255, 255) !important;
+        color: rgb(213, 0, 0) !important;
+        fill: rgb(213, 0, 0) !important;
+        stroke: rgb(213, 0, 0) !important;
       }
 
       
       /* Dropdown open state - pink background, white text */
+      .hCJXyI,
+      dDfGrE,
       .dDfGrE:not([data-disabled])[data-state='closed']:hover,
       .dDfGrE:not([data-disabled])[data-state='open']:hover,
       .dDfGrE:not([data-disabled])[data-state='open']{
         background: rgb(255, 216, 216) !important;
+      }
+      
+      /* iHGSov dropdown open state */
+      .iHGSov:not([data-disabled]):hover > .sc-fSwKIM .sc-dYsygx,
+      .iHGSov:not([data-disabled])[data-state='open'] > .sc-fSwKIM .sc-dYsygx {
+        background: rgb(213, 0, 0) !important;
+        color: rgb(255, 255, 255) !important;
       }
       
       /* 10. SPECIAL CLASSES */
@@ -335,7 +356,15 @@ export default {
       }
       
       .gMZHjq,
+      .fCjiMi,
+      .dDfGrE,
+      .dDfGrE:focus,
+      .dDfGrE:hover,
+      .iUGHXl,
+      .iUGHXl:focus,
+      .iUGHXl:hover,
       .hONHGK,
+      .bnsTCU,
       .dppjTS {
         background: rgb(255, 237, 237) !important;
       }
@@ -370,6 +399,7 @@ export default {
       .eryDNk,
       .sc-biMVnu.hCRpDc.sc-fEETNT.kMOJHi.sc-dPKWQb.dWnVTT.sc-bruwDQ.buWeOZ,
       .css-3r9uaq div,
+      .bRfbCy,
       .doQLPW,
       .sc-biMVnu hWKkhu sc-fEETNT jPaZnx:active,
       .sc-biMVnu hWKkhu sc-fEETNT jPaZnx:hover,
@@ -383,8 +413,8 @@ export default {
       
       /* 12. BLACK TEXT ELEMENTS */
       .iuxVNm,
-      .ftfKfW,
       .hkCDaM svg,
+      .bsEYzr,
       .eryDNk[aria-disabled='true']:hover,
       .eryDNk[aria-disabled='true']:hover svg,
       .sc-biMVnu.hCRpDc.sc-fEETNT.kZxVIC,
