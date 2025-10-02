@@ -21,21 +21,21 @@ const config = {
                 neutral100: "#fafafa", // BACKGROUND CONTENT
                 neutral150: "#eaeaef", // DISABLED BUTTON BG
                 neutral200: "#dcdce4", // LINE THROUGH MIDDLE
-                neutral500: "#8e8ea9", // MENU IDLE COLOR
+                neutral500: "#000000", // MENU IDLE COLOR
                 neutral600: "#666687", // MENU HOVER COLOR
                 neutral700: "#4a4a6a", // MENU ACTIVE ICON COLOR
                 neutral800: "#32324d", // TITLE COLORS
                 neutral900: "#212134", // TOOLTIP BG
-                primary100: "#F6EBD3", // MENU ACTIVE BG
-                primary200: "#EDD29C", // PLUS SIGN BG
-                primary500: "#D7A048", // PRIMARY BUTTON HOVER
-                primary600: "#C28F3F", // PRIMARY BUTTON COLOR
-                primary700: "#A4742F", // HIGHLIGHT COLOR
-                buttonPrimary100: "#F6EBD3",
-                buttonPrimary200: "#EDD29C",
-                buttonPrimary500: "#D7A048",
-                buttonPrimary600: "#C28F3F",
-                buttonPrimary700: "#A4742F",
+                primary100: "#ffefed", // MENU ACTIVE BG
+                primary200: "#ffb8b8", // PLUS SIGN BG
+                primary500: "#CC0000", // PRIMARY BUTTON HOVER
+                primary600: "#E60000", // PRIMARY BUTTON COLOR
+                primary700: "#E60000", // HIGHLIGHT COLOR
+                buttonPrimary100: "#ffefed",
+                buttonPrimary200: "#ffefed",
+                buttonPrimary500: "#CC0000",
+                buttonPrimary600: "#E60000",
+                buttonPrimary700: "#E60000",
                 secondary100: "#DCEAF0",
                 secondary200: "#B7D0E1",
                 secondary500: "#3C91C5",
@@ -46,27 +46,27 @@ const config = {
         },
         dark: {
             colors: {
-                danger100: "#181826", // TOGGLE OFF BG
+                danger100: "#181818", // TOGGLE OFF BG
                 danger700: "#b72b1a", // TOGGLE OFF COLOR
-                neutral0: "#212134", // BACKGROUND SIDEBAR
-                neutral100: "#181826", // BACKGROUND CONTENT
-                neutral150: "#32324d", // DISABLED BUTTON BG
-                neutral200: "#4a4a6a", // LINE THROUGH MIDDLE
-                neutral500: "#c0c0cf", // MENU IDLE COLOR
+                neutral0: "#242424", // BACKGROUND SIDEBAR
+                neutral100: "#181818", // BACKGROUND CONTENT
+                neutral150: "#171717", // DISABLED BUTTON BG
+                neutral200: "#363535", // LINE THROUGH MIDDLE
+                neutral500: "#FFFFFF", // MENU IDLE COLOR
                 neutral600: "#a5a5ba", // MENU HOVER COLOR
                 neutral700: "#eaeaef", // MENU ACTIVE ICON COLOR
                 neutral800: "#ffffff", // TITLE COLORS
                 neutral900: "#ffffff", // TOOLTIP BG
-                primary100: "#202035", // MENU ACTIVE BG
+                primary100: "#242424", // MENU ACTIVE BG
                 primary200: "#2A2F2F", // PLUS SIGN BG
-                primary500: "#D7A048", // PRIMARY BUTTON HOVER
-                primary600: "#C28F3F", // PRIMARY BUTTON COLOR
-                primary700: "#A4742F", // HIGHLIGHT COLOR
+                primary500: "#CC0000", // PRIMARY BUTTON HOVER
+                primary600: "#E60000", // PRIMARY BUTTON COLOR
+                primary700: "#E60000", // HIGHLIGHT COLOR
                 buttonPrimary100: "#202035",
                 buttonPrimary200: "#2A2F2F",
-                buttonPrimary500: "#D7A048",
-                buttonPrimary600: "#C28F3F",
-                buttonPrimary700: "#A4742F",
+                buttonPrimary500: "#CC0000",
+                buttonPrimary600: "#E60000",
+                buttonPrimary700: "#CC0000",
                 secondary100: "#2A3C50",
                 secondary200: "#355672",
                 secondary500: "#3C91C5",
