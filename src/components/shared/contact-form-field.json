@@ -8,12 +8,14 @@
     "firstName": {
       "type": "component",
       "component": "shared.label",
-      "repeatable": false
+      "repeatable": false,
+      "required": false
     },
     "lastName": {
       "type": "component",
       "component": "shared.label",
-      "repeatable": false
+      "repeatable": false,
+      "required": false
     },
     "email": {
       "type": "component",

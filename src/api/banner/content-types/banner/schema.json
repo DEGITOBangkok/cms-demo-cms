@@ -35,23 +35,11 @@
       },
       "customField": "plugin::ckeditor5.CKEditor",
       "options": {
-        "preset": "defaultHtml"
-      }
-    },
-    "thumbnail": {
-      "type": "media",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
+        "preset": "defaultHtml",
+        "maxLengthCharacters": null,
+        "maxLengthWords": 30
       },
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "required": true
     },
     "media": {
       "type": "dynamiczone",
@@ -64,6 +52,7 @@
         "shared.image",
         "shared.video"
       ],
+      "required": true,
       "min": 1,
       "max": 1
     }

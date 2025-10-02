@@ -23,7 +23,8 @@
                 }
             },
             "component": "shared.contact",
-            "repeatable": false
+            "repeatable": false,
+            "required": true
         },
         "SEO": {
             "type": "component",
@@ -41,7 +42,8 @@
                 "i18n": {
                     "localized": true
                 }
-            }
+            },
+            "required": true
         },
         "contactDesc": {
             "type": "text",
@@ -49,7 +51,8 @@
                 "i18n": {
                     "localized": true
                 }
-            }
+            },
+            "required": true
         },
         "ContactFill": {
             "type": "component",

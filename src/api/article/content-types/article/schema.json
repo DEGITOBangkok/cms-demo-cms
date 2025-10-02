@@ -74,9 +74,9 @@
         }
       },
       "multiple": true,
+      "required": true,
       "allowedTypes": [
-        "images",
-        "files"
+        "images"
       ]
     },
     "content": {
@@ -88,8 +88,10 @@
       },
       "customField": "plugin::ckeditor5.CKEditor",
       "options": {
-        "preset": "defaultHtml"
-      }
+        "preset": "defaultHtml",
+        "maxLengthWords": 900
+      },
+      "required": true
     }
   }
 }
