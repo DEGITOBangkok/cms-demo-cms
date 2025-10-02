@@ -364,6 +364,7 @@ export default {
       .iUGHXl:focus,
       .iUGHXl:hover,
       .hONHGK,
+      .bnsTCU,
       .dppjTS {
         background: rgb(255, 237, 237) !important;
       }

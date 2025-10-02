@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_labels",
+  "info": {
+    "displayName": "label"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
