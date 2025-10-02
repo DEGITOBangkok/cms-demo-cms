@@ -143,7 +143,7 @@ export default {
       [role="button"]:active svg * {
         stroke-width: inherit !important;
       }
-      .cThYdB.active>div,
+      .cThYdB.active > div,
       .kcQkRk.active > div {
         background: rgb(30, 27, 27) !important;
         color: rgb(255, 255, 255) !important;
