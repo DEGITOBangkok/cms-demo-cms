@@ -4,7 +4,7 @@
   "info": {
     "singularName": "banner",
     "pluralName": "banners",
-    "displayName": "Banner"
+    "displayName": "0.2.1 Banner"
   },
   "options": {
     "draftAndPublish": true
@@ -21,7 +21,10 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "minLength": 10,
+      "maxLength": 100,
+      "required": true
     },
     "description": {
       "type": "customField",
@@ -32,25 +35,13 @@
       },
       "customField": "plugin::ckeditor5.CKEditor",
       "options": {
-        "preset": "defaultHtml"
-      }
-    },
-    "image": {
-      "type": "media",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
+        "preset": "defaultHtml",
+        "maxLengthCharacters": null,
+        "maxLengthWords": 30
       },
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "required": true
     },
-    "youtubeUrl": {
+    "contentUrl": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -58,20 +49,20 @@
         }
       }
     },
-    "thumbnail": {
-      "type": "media",
+    "media": {
+      "type": "dynamiczone",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "components": [
+        "shared.image",
+        "shared.video"
+      ],
+      "required": true,
+      "min": 1,
+      "max": 1
     }
   }
 }
