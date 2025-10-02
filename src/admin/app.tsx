@@ -244,6 +244,7 @@ export default {
       .hLDDnY svg,
       .jjXEOO svg,
       .cJFhBZ path,
+      .ftfKfW,
       .jjXEOO svg *,
       .hLDDnY svg *,
       .hLDDnY *,
@@ -327,6 +328,11 @@ export default {
       }
       
       /* iHGSov dropdown open state */
+      a[style*="text-decoration: none"]:not(button):not([role="button"]).eryDNk {
+        color: rgb(255, 255, 255) !important;
+        background: rgb(213, 0, 0) !important;
+      }
+      
       .iHGSov:not([data-disabled]):hover > .sc-fSwKIM .sc-dYsygx,
       .iHGSov:not([data-disabled])[data-state='open'] > .sc-fSwKIM .sc-dYsygx {
         background: rgb(213, 0, 0) !important;

@@ -6,19 +6,24 @@
     "options": {},
     "attributes": {
         "Address": {
-            "type": "string"
+            "type": "string",
+            "required": true
         },
         "email": {
-            "type": "string"
+            "type": "string",
+            "required": true
         },
         "Time": {
-            "type": "text"
+            "type": "text",
+            "required": true
         },
         "MapAddress": {
-            "type": "text"
+            "type": "text",
+            "required": true
         },
         "Phonenumber": {
-            "type": "string"
+            "type": "string",
+            "required": true
         }
     },
     "config": {}

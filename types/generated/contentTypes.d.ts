@@ -512,6 +512,7 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::banner.banner'>;
     media: Schema.Attribute.DynamicZone<['shared.image', 'shared.video']> &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -525,14 +526,6 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
         number
       >;
     publishedAt: Schema.Attribute.DateTime;
-    thumbnail: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -635,6 +628,7 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
   };
   attributes: {
     contactDesc: Schema.Attribute.Text &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -656,6 +650,7 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
         };
       }>;
     contactTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
