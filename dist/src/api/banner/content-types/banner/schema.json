@@ -38,29 +38,6 @@
                 "preset": "defaultHtml"
             }
         },
-        "image": {
-            "type": "media",
-            "pluginOptions": {
-                "i18n": {
-                    "localized": true
-                }
-            },
-            "multiple": false,
-            "allowedTypes": [
-                "images",
-                "files",
-                "videos",
-                "audios"
-            ]
-        },
-        "youtubeUrl": {
-            "type": "string",
-            "pluginOptions": {
-                "i18n": {
-                    "localized": true
-                }
-            }
-        },
         "thumbnail": {
             "type": "media",
             "pluginOptions": {
@@ -86,7 +63,9 @@
             "components": [
                 "shared.image",
                 "shared.video"
-            ]
+            ],
+            "min": 1,
+            "max": 1
         }
     }
 }
