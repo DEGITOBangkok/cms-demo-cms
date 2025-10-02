@@ -18,14 +18,7 @@ export default [
     config: {
       enabled: true,
       headers: '*',
-      origin: [
-        'http://localhost:3000',
-        'http://localhost:1337',
-        'http://0.0.0.0:1337',
-        'http://127.0.0.1:1337',
-        'https://demoweb.degitosandbox.com',
-        'https://democms.degitosandbox.com',
-      ],
+      origin: '*', // Allow all origins for development
     },
   },
   'strapi::poweredBy',

@@ -35,16 +35,6 @@
             },
             "required": true
         },
-        "description": {
-            "type": "text",
-            "pluginOptions": {
-                "i18n": {
-                    "localized": true
-                }
-            },
-            "maxLength": 80,
-            "required": true
-        },
         "slug": {
             "type": "uid",
             "targetField": "title",
