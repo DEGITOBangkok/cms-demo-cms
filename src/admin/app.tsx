@@ -143,7 +143,7 @@ export default {
       [role="button"]:active svg * {
         stroke-width: inherit !important;
       }
-      
+      .cThYdB.active>div,
       .kcQkRk.active > div {
         background: rgb(30, 27, 27) !important;
         color: rgb(255, 255, 255) !important;
@@ -243,12 +243,12 @@ export default {
       .cKyIch path *,
       .hLDDnY svg,
       .jjXEOO svg,
+      .cJFhBZ path,
       .jjXEOO svg *,
       .hLDDnY svg *,
       .hLDDnY *,
       .iyGaEL *,
       .VxfeP path,
-      .ftfKfW,
       .doUwfF[data-state="open"],
       [data-state="unchecked"]:hover svg,
       .sc-biMVnu.gLUaOg.sc-eUkiUm.jIJgV.sc-biMVnu.hutJZB.sc-fEETNT.jtRUlM.sc-fdOGDD.hQoytw,
@@ -268,6 +268,7 @@ export default {
       /* AgPfA with data-state open */
       .AgPfA[data-orientation="vertical"],
       [data-state="unchecked"],
+      .kftxrK
       .AgPfA[data-orientation="vertical"]:hover {
         background: none !important;
         color: black !important;
