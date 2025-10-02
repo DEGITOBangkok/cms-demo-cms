@@ -245,6 +245,7 @@ export default {
       .jjXEOO svg,
       .cJFhBZ path,
       .ftfKfW,
+      .iRZmIg path,
       .jjXEOO svg *,
       .hLDDnY svg *,
       .hLDDnY *,
@@ -269,7 +270,7 @@ export default {
       /* AgPfA with data-state open */
       .AgPfA[data-orientation="vertical"],
       [data-state="unchecked"],
-      .kftxrK
+      .kftxrK,
       .AgPfA[data-orientation="vertical"]:hover {
         background: none !important;
         color: black !important;

@@ -4,7 +4,7 @@
     "info": {
         "singularName": "banner",
         "pluralName": "banners",
-        "displayName": "0.3.1 Banner"
+        "displayName": "0.2.1 Banner"
     },
     "options": {
         "draftAndPublish": true
@@ -40,6 +40,14 @@
                 "maxLengthWords": 30
             },
             "required": true
+        },
+        "contentUrl": {
+            "type": "string",
+            "pluginOptions": {
+                "i18n": {
+                    "localized": true
+                }
+            }
         },
         "media": {
             "type": "dynamiczone",
