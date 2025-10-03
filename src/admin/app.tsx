@@ -80,6 +80,13 @@ const config = {
 
 
 const bootstrap = (app: StrapiApp) => {
+    // Force custom favicon
+    const faviconLink = document.createElement("link");
+    faviconLink.rel = "icon";
+    faviconLink.type = "image/png";
+    faviconLink.href = "/favicon.png?v=" + Date.now(); // Cache busting
+    document.head.appendChild(faviconLink);
+    
     const styleTag = document.createElement("style");
     styleTag.innerText = `
     a[href*="/cms/dashboard/plugins/cloud"], a[href*="/cms/strapi/strapi/releases/tag/v"], a[href*="strapi.io/"], a[href*="cloud.strapi.io"] {
