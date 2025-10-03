@@ -18,4 +18,13 @@ export default () => ({
           },
         },
       },
+    'export-csv': {
+        enabled: true,
+        config: {
+            // Configuration options for the export CSV plugin
+            batchSize: 1000, // Number of records to process in each batch
+            excludedColumns: ['id', 'createdAt', 'updatedAt'], // Columns to exclude from export
+            dateFormat: 'YYYY-MM-DD', // Date format for exported dates
+        },
+    },
 });
