@@ -3,6 +3,7 @@
  * Any modifications made will be discarded.
  */
 import ckeditor5 from "@_sh/strapi-plugin-ckeditor/strapi-admin";
+import exportCsv from "@fresh.codes/strapi-plugin-export-csv/strapi-admin";
 import strapiCloud from "@strapi/plugin-cloud/strapi-admin";
 import seo from "@strapi/plugin-seo/strapi-admin";
 import usersPermissions from "@strapi/plugin-users-permissions/strapi-admin";
@@ -16,6 +17,7 @@ renderAdmin(document.getElementById("strapi"), {
 
   plugins: {
     ckeditor5: ckeditor5,
+    "export-csv": exportCsv,
     "strapi-cloud": strapiCloud,
     seo: seo,
     "users-permissions": usersPermissions,
